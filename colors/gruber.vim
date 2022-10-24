@@ -10,7 +10,7 @@ let g:colors_name = "gruber"
 " Colors
 let s:black     = ["#1c1c1c", "234"]
 let s:graphite  = ["#262626", "235"]
-let s:gray      = ["#767676", "243"]
+let s:gray      = ["#626262", "241"]
 let s:white     = ["#e4e4e4", "254"]
 
 let s:red       = ["#ff5f5f", "203"]
@@ -37,7 +37,7 @@ let s:warn  = s:yellow
 let s:info  = s:blue
 let s:hint  = s:gray
 
-function! s:hl(group, attrs)
+function! s:hl(group, attrs) abort
     if has_key(a:attrs, "fg")
         let a:attrs["guifg"] = a:attrs["fg"][0]
         let a:attrs["ctermfg"] = a:attrs["fg"][1]
@@ -87,7 +87,7 @@ call s:hl("Statement",      { "fg": s:yellow, "style": "bold" })
 call s:hl("Operator",       { "fg": s:primary })
 call s:hl("PreProc",        { "fg": s:cyan })
 call s:hl("Type",           { "fg": s:yellow })
-call s:hl("Structure",      { "fg": s:blue })
+call s:hl("Structure",      { "fg": s:cyan })
 call s:hl("Special",        { "fg": s:primary })
 call s:hl("Underlined",     { "style": "underline" })
 call s:hl("Ignore",         { "fg": s:bg })
@@ -110,11 +110,11 @@ call s:hl("StatusLine",     { "bg": s:accent })
 call s:hl("StatusLineNC",   { "fg": s:secondary, "bg": s:accent })
 
 " Search
-call s:hl("Search",         { "bg": s:selection })
+call s:hl("Search",         { "fg": s:primary, "bg": s:selection })
 call s:hl("IncSearch",      { "fg": s:bg, "bg": s:highlight })
 call s:hl("CurSearch",      { "fg": s:bg, "bg": s:highlight, "style": "bold" })
 
-" Autocompletion
+" Completion
 call s:hl("Pmenu",          { "bg": s:accent })
 call s:hl("PmenuSel",       { "bg": s:selection })
 call s:hl("PmenuSBar",      { "bg": s:accent })
@@ -124,7 +124,7 @@ call s:hl("WildMenu",       { "bg": s:selection })
 " Tabs
 call s:hl("TabLine",        { "fg": s:secondary, "bg": s:accent })
 call s:hl("TabLineFill",    { "fg": s:secondary, "bg": s:accent })
-call s:hl("TabLineSel",     { "style": "bold" })
+call s:hl("TabLineSel",     { "style": "bold,italic" })
 call s:hl("Title",          { "fg": s:yellow, "style": "bold" })
 
 " Diff
@@ -147,8 +147,8 @@ call s:hl("SpellLocal",     { "style": "undercurl" })
 call s:hl("SpellRare",      { "style": "underdotted" })
 
 " Folding
-call s:hl("Folded",         { "fg": s:cyan, "bg": s:selection })
-call s:hl("FoldColumn",     { "fg": s:cyan, "bg": s:selection })
+call s:hl("Folded",         { "fg": s:brown, "bg": s:accent, "style": "italic" })
+call s:hl("FoldColumn",     { "fg": s:brown, "style": "italic" })
 
 " Diagnostic
 call s:hl("DiagnosticError",{ "fg": s:error })
@@ -163,7 +163,7 @@ call s:hl("NonText",        { "fg": s:secondary })
 " Misc
 call s:hl("Conceal",        { "fg": s:magenta })
 call s:hl("Directory",      { "fg": s:blue })
-call s:hl("MatchParen",     { "style": "bold" })
+call s:hl("MatchParen",     { "style": "bold,underline" })
 call s:hl("QuickFixLine",   { "bg": s:selection, "style": "bold" })
 call s:hl("SpecialKey",     { "fg": s:magenta })
 call s:hl("VertSplit",      { "fg": s:gray })
