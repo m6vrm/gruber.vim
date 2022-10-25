@@ -90,9 +90,10 @@ highlight! link TermCursor  Cursor
 call s:hl("CursorLine",     { "bg": s:graphite })
 highlight! link CursorColumn CursorLine
 
-" Line numbers
-call s:hl("LineNr",         { "fg": s:gray, "bg": s:black })
 call s:hl("CursorLineNr",   { "style": "bold" })
+
+" Line numbers
+call s:hl("LineNr",         { "fg": s:gray })
 call s:hl("SignColumn",     { "bg": s:black })
 
 " Status line
@@ -115,7 +116,7 @@ call s:hl("WildMenu",       { "fg": s:white, "bg": s:gray, "style": "bold" })
 call s:hl("TabLine",        { "fg": s:gray, "bg": s:graphite })
 highlight! link TabLineFill TabLine
 
-call s:hl("TabLineSel",     { "fg": s:white, "bg": s:black, "style": "bold,italic" })
+call s:hl("TabLineSel",     { "fg": s:white, "style": "bold,italic" })
 call s:hl("Title",          { "fg": s:yellow, "style": "bold" })
 
 " Diff
@@ -157,11 +158,11 @@ call s:hl("VertSplit",      { "fg": s:gray })
 call s:hl("WinSeparator",   { "fg": s:gray })
 
 " WinBar
-call s:hl("WinBar",         { "fg": s:magenta, "bg": s:black, "style": "bold" })
+call s:hl("WinBar",         { "fg": s:magenta, "style": "bold" })
 highlight! link WinBarNC    WinBar
 
 " Misc
-call s:hl("MatchParen",     { "bg": s:blue, "style": "bold" })
+call s:hl("MatchParen",     { "fg": s:yellow, "style": "bold" })
 call s:hl("QuickFixLine",   { "bg": s:gray, "style": "bold" })
 call s:hl("SpecialKey",     { "fg": s:magenta })
 call s:hl("Conceal",        { "fg": s:magenta })
