@@ -52,8 +52,25 @@ function! s:hl(group, attrs) abort
     execute l:command
 endfunction
 
+function! s:merge(arg1, arg2, ...) abort
+    let l:result = copy(a:arg1)
+    call call("extend", [l:result, a:arg2] + a:000)
+    return l:result
+endfunction
+
 " Test highlighting with `:source $VIMRUNTIME/syntax/hitest.vim`
 " and `:help group-name`
+
+let s:fg = { "fg": s:white }
+let s:comment = { "fg": s:brown }
+let s:preproc = { "fg": s:cyan }
+let s:keyword = { "fg": s:yellow, "style": "bold" }
+let s:type = { "fg": s:yellow }
+let s:function = { "fg": s:blue }
+let s:literal = { "fg": s:magenta }
+let s:string = { "fg": s:green }
+let s:char = { "fg": s:cyan }
+let s:info = { "style": "italic" }
 
 " Modes
 call s:hl("Normal",         { "fg": s:white, "bg": s:black })
@@ -65,23 +82,26 @@ call s:hl("Visual",         { "bg": s:gray })
 highlight! link VisualNOS   Visual
 
 " Syntax
-call s:hl("Comment",        { "fg": s:brown })
-call s:hl("Constant",       { "fg": s:magenta })
-call s:hl("String",         { "fg": s:green })
-call s:hl("Identifier",     { "fg": s:white })
-call s:hl("Function",       { "fg": s:blue })
-call s:hl("Statement",      { "fg": s:yellow, "style": "bold" })
-call s:hl("Operator",       { "fg": s:white })
-call s:hl("PreProc",        { "fg": s:cyan })
-call s:hl("Type",           { "fg": s:yellow })
-call s:hl("Structure",      { "fg": s:blue })
-call s:hl("Special",        { "fg": s:white })
-call s:hl("SpecialChar",    { "fg": s:cyan })
-call s:hl("SpecialComment", { "fg": s:brown, "style": "italic" })
+call s:hl("Comment",        s:comment)
+call s:hl("Constant",       s:fg)
+call s:hl("String",         s:string)
+call s:hl("Character",      s:char)
+call s:hl("Number",         s:literal)
+call s:hl("Boolean",        s:literal)
+call s:hl("Float",          s:literal)
+call s:hl("Identifier",     s:fg)
+call s:hl("Function",       s:function)
+call s:hl("Statement",      s:keyword)
+call s:hl("Operator",       s:fg)
+call s:hl("PreProc",        s:preproc)
+call s:hl("Type",           s:type)
+call s:hl("Special",        s:fg)
+call s:hl("SpecialChar",    s:char)
+call s:hl("SpecialComment", s:merge(s:comment, s:info))
 call s:hl("Underlined",     { "style": "underline" })
 call s:hl("Ignore",         { "fg": s:black })
 call s:hl("Error",          { "fg": s:red })
-call s:hl("Todo",           { "fg": s:brown, "style": "italic" })
+call s:hl("Todo",           s:merge(s:comment, s:info))
 
 " Cursor
 call s:hl("Cursor",         { "fg": s:black, "bg": s:white })
@@ -165,7 +185,7 @@ call s:hl("WinBar",         { "fg": s:magenta, "style": "bold" })
 highlight! link WinBarNC    WinBar
 
 " Misc
-call s:hl("MatchParen",     { "bg": s:gray, "style": "bold" })
+call s:hl("MatchParen",     { "fg": s:yellow, "style": "bold" })
 call s:hl("QuickFixLine",   { "bg": s:gray, "style": "bold" })
 call s:hl("SpecialKey",     { "fg": s:magenta })
 call s:hl("Conceal",        { "fg": s:magenta })
