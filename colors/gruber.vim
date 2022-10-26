@@ -40,8 +40,8 @@ function! s:hl(group, attrs) abort
         unlet a:attrs["style"]
     endif
 
-    let l:defaults = { "guifg": "NONE", "guibg": "NONE", "gui": "NONE", "guisp": "NONE",
-                     \ "ctermfg": "NONE", "ctermbg": "NONE", "cterm": "NONE" }
+    let l:defaults = { "guifg": "none", "guibg": "none", "gui": "none", "guisp": "none",
+                     \ "ctermfg": "none", "ctermbg": "none", "cterm": "none" }
     call extend(l:defaults, a:attrs)
 
     let l:command = "highlight" . " " . a:group
@@ -53,6 +53,7 @@ function! s:hl(group, attrs) abort
 endfunction
 
 " Test highlighting with `:source $VIMRUNTIME/syntax/hitest.vim`
+" and `:help group-name`
 
 " Modes
 call s:hl("Normal",         { "fg": s:white, "bg": s:black })
@@ -73,8 +74,10 @@ call s:hl("Statement",      { "fg": s:yellow, "style": "bold" })
 call s:hl("Operator",       { "fg": s:white })
 call s:hl("PreProc",        { "fg": s:cyan })
 call s:hl("Type",           { "fg": s:yellow })
-call s:hl("Structure",      { "fg": s:cyan })
+call s:hl("Structure",      { "fg": s:blue })
 call s:hl("Special",        { "fg": s:white })
+call s:hl("SpecialChar",    { "fg": s:cyan })
+call s:hl("SpecialComment", { "fg": s:brown, "style": "italic" })
 call s:hl("Underlined",     { "style": "underline" })
 call s:hl("Ignore",         { "fg": s:black })
 call s:hl("Error",          { "fg": s:red })
@@ -162,7 +165,7 @@ call s:hl("WinBar",         { "fg": s:magenta, "style": "bold" })
 highlight! link WinBarNC    WinBar
 
 " Misc
-call s:hl("MatchParen",     { "fg": s:yellow, "style": "bold" })
+call s:hl("MatchParen",     { "bg": s:gray, "style": "bold" })
 call s:hl("QuickFixLine",   { "bg": s:gray, "style": "bold" })
 call s:hl("SpecialKey",     { "fg": s:magenta })
 call s:hl("Conceal",        { "fg": s:magenta })
