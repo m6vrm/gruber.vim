@@ -130,9 +130,9 @@ call s:hl("IncSearch",      { "fg": s:black, "bg": s:yellow })
 call s:hl("CurSearch",      { "fg": s:black, "bg": s:yellow, "style": "bold" })
 
 " Completion
-call s:hl("Pmenu",          { "fg": s:white, "bg": s:lightblack })
+call s:hl("Pmenu",          { "fg": s:white, "bg": s:darkgray })
 call s:hl("PmenuSel",       { "fg": s:white, "bg": s:gray, "style": "bold" })
-call s:hl("PmenuSBar",      { "bg": s:lightblack })
+call s:hl("PmenuSBar",      { "bg": s:darkgray })
 call s:hl("PmenuThumb",     { "bg": s:gray })
 call s:hl("WildMenu",       { "fg": s:white, "bg": s:gray, "style": "bold" })
 
