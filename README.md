@@ -1,4 +1,4 @@
-![Screenshot](https://i.imgur.com/nYjIn5T.png)
+![Screenshot](https://i.imgur.com/jx1bbUA.png)
 
 Ported to Vim and slightly modified [Gruber Dark](https://daringfireball.net/projects/bbcolors/schemes/) theme for BBEdit by John Gruber. The colors have been adjusted to match Xterm 256 color palette.
 
