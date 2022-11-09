@@ -126,8 +126,8 @@ call s:hl("StatusLineNC",   { "fg": s:gray, "bg": s:lightblack })
 
 " Search
 call s:hl("Search",         { "fg": s:white, "bg": s:gray })
-call s:hl("IncSearch",      { "fg": s:black, "bg": s:yellow })
-call s:hl("CurSearch",      { "fg": s:black, "bg": s:yellow, "style": "bold" })
+call s:hl("IncSearch",      { "fg": s:black, "bg": s:yellow, "style": "bold" })
+highlight! link CurSearch IncSearch
 
 " Completion
 call s:hl("Pmenu",          { "fg": s:white, "bg": s:darkgray })
