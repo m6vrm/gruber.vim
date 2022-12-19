@@ -62,16 +62,19 @@ endfunction
 " Test highlighting with `:source $VIMRUNTIME/syntax/hitest.vim`
 " and `:help group-name`
 
-let s:fg       = { "fg": s:white }
-let s:comment  = { "fg": s:brown }
-let s:preproc  = { "fg": s:cyan }
-let s:keyword  = { "fg": s:yellow, "style": "bold" }
-let s:type     = { "fg": s:yellow }
-let s:function = { "fg": s:blue }
-let s:literal  = { "fg": s:magenta }
-let s:string   = { "fg": s:green }
-let s:char     = { "fg": s:cyan }
-let s:info     = { "style": "italic" }
+let s:constant   = { "fg": s:white }
+let s:identifier = { "fg": s:white }
+let s:special    = { "fg": s:white }
+let s:operator   = { "fg": s:white }
+let s:comment    = { "fg": s:brown }
+let s:preproc    = { "fg": s:cyan }
+let s:keyword    = { "fg": s:yellow, "style": "bold" }
+let s:type       = { "fg": s:yellow }
+let s:function   = { "fg": s:blue }
+let s:literal    = { "fg": s:magenta }
+let s:string     = { "fg": s:green }
+let s:char       = { "fg": s:cyan }
+let s:info       = { "style": "italic" }
 
 " Modes
 call s:hl("Normal",         { "fg": s:white, "bg": s:black })
@@ -84,19 +87,19 @@ highlight! link VisualNOS   Visual
 
 " Syntax
 call s:hl("Comment",        s:comment)
-call s:hl("Constant",       s:fg)
+call s:hl("Constant",       s:constant)
 call s:hl("String",         s:string)
 call s:hl("Character",      s:char)
 call s:hl("Number",         s:literal)
 call s:hl("Boolean",        s:literal)
 call s:hl("Float",          s:literal)
-call s:hl("Identifier",     s:fg)
+call s:hl("Identifier",     s:identifier)
 call s:hl("Function",       s:function)
 call s:hl("Statement",      s:keyword)
-call s:hl("Operator",       s:fg)
+call s:hl("Operator",       s:operator)
 call s:hl("PreProc",        s:preproc)
 call s:hl("Type",           s:type)
-call s:hl("Special",        s:fg)
+call s:hl("Special",        s:special)
 call s:hl("SpecialChar",    s:char)
 call s:hl("SpecialComment", s:merge(s:comment, s:info))
 call s:hl("Underlined",     { "style": "underline" })
