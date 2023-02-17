@@ -152,6 +152,11 @@ call s:hl("DiffDelete",     { "fg": s:black, "bg": s:red })
 call s:hl("DiffChange",     { "fg": s:black, "bg": s:blue })
 call s:hl("DiffText",       { "fg": s:black, "bg": s:blue, "style": "bold,italic" })
 
+" GitSigns
+call s:hl("GitSignsAdd",    { "fg": s:green })
+call s:hl("GitSignsDelete", { "fg": s:red })
+call s:hl("GitSignsChange", { "fg": s:blue })
+
 " Messages
 call s:hl("ModeMsg",        { "style": "bold" })
 call s:hl("MsgSeparator",   { "fg": s:gray })
