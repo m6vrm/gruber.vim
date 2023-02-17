@@ -150,7 +150,7 @@ call s:hl("Title",          { "fg": s:yellow, "style": "bold" })
 call s:hl("DiffAdd",        { "fg": s:black, "bg": s:green })
 call s:hl("DiffDelete",     { "fg": s:black, "bg": s:red })
 call s:hl("DiffChange",     { "fg": s:black, "bg": s:blue })
-call s:hl("DiffText",       { "fg": s:black, "bg": s:red, "style": "bold" })
+call s:hl("DiffText",       { "fg": s:black, "bg": s:blue, "style": "bold,italic" })
 
 " Messages
 call s:hl("ModeMsg",        { "style": "bold" })
