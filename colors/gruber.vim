@@ -41,8 +41,8 @@ function! s:hl(group, attrs) abort
         unlet a:attrs["style"]
     endif
 
-    let l:defaults = { "guifg": "none", "guibg": "none", "gui": "none", "guisp": "none",
-                     \ "ctermfg": "none", "ctermbg": "none", "cterm": "none" }
+    let l:defaults = { "guifg": "NONE", "guibg": "NONE", "gui": "NONE", "guisp": "NONE",
+                     \ "ctermfg": "NONE", "ctermbg": "NONE", "cterm": "NONE" }
     call extend(l:defaults, a:attrs)
 
     let l:command = "highlight" . " " . a:group
