@@ -59,13 +59,14 @@ function! s:merge(arg1, arg2, ...) abort
     return l:result
 endfunction
 
-" Test highlighting with `:source $VIMRUNTIME/syntax/hitest.vim`
-" and `:help group-name`
+" :source $VIMRUNTIME/syntax/hitest.vim
+" :help group-name
+" :help highlight-default
 
 let s:constant   = { "fg": s:white }
 let s:identifier = { "fg": s:white }
 let s:special    = { "fg": s:white }
-let s:operator   = { "fg": s:white }
+let s:operator   = { "fg": s:cyan }
 let s:comment    = { "fg": s:brown }
 let s:preproc    = { "fg": s:cyan }
 let s:keyword    = { "fg": s:yellow, "style": "bold" }
