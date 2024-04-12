@@ -56,10 +56,10 @@ endfunction
 " :help group-name
 " :help highlight-default
 
+call s:hl("ColorColumn",    { "bg": s:gray })
 call s:hl("Comment",        { "fg": s:brown })
 call s:hl("Constant",       { "fg": s:cyan })
 call s:hl("CursorLine",     { "bg": s:gray })
-call s:hl("ColorColumn",    { "bg": s:gray })
 call s:hl("DiffAdd",        { "fg": s:green })
 call s:hl("DiffChange",     { "fg": s:blue })
 call s:hl("DiffDelete",     { "fg": s:red })
@@ -77,6 +77,10 @@ call s:hl("MatchParen",     { "fg": s:yellow, "style": s:bold })
 call s:hl("MoreMsg",        { "fg": s:green })
 call s:hl("NonText",        { "fg": s:blue })
 call s:hl("Normal",         { "fg": s:white, "bg": s:black })
+call s:hl("Pmenu",          { "fg": s:white, "bg": s:gray })
+call s:hl("PmenuSbar",      { "bg": s:gray })
+call s:hl("PmenuSel",       { "fg": s:black, "bg": s:yellow, "style": s:bold })
+call s:hl("PmenuThumb",     { "bg": s:black })
 call s:hl("PreProc",        { "fg": s:cyan })
 call s:hl("Question",       { "fg": s:blue })
 call s:hl("Special",        { "fg": s:white })
