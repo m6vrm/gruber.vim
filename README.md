@@ -1,4 +1,4 @@
-![](screenshot.png)
+![](https://raw.githubusercontent.com/m6vrm/gruber.vim/master/screenshot.png)
 
 Ported to Vim and slightly modified Gruber Dark theme for BBEdit by John Gruber
 (https://daringfireball.net/projects/bbcolors/schemes/). Colors have been
