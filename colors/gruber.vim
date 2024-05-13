@@ -5,7 +5,7 @@ if exists("syntax_on")
 endif
 
 set background=dark
-let g:colors_name = "gruber-plain"
+let g:colors_name = "gruber"
 
 let s:black  = ["#1c1c1c", "234"]
 let s:blue   = ["#87afd7", "110"]
